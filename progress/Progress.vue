@@ -22,5 +22,9 @@ export default {
 <style scoped>
 .progress-bar {
     transition: width 0.6s;
+    height: 2px;
+}
+.progress{
+    height: 2px;
 }
 </style>
