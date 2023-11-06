@@ -9,23 +9,7 @@
 <script>
 export default {
     name: "Loader",
-    props:['loading']
-    ,
-    // data() {
-    //     return {
-    //         loading: false,
-    //     };
-    // },
-    // methods: {
-    //     // Call this method to show the loader
-    //     showLoader() {
-    //         this.loading = true;
-    //     },
-    //     // Call this method to hide the loader
-    //     hideLoader() {
-    //         this.loading = false;
-    //     },
-    // },
+    props:['loading'],
 }
 </script>
 

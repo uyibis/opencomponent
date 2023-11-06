@@ -1,43 +1,35 @@
-# Vue 3 File Uploader Component
+# `FileUploader` Vue Component
 
-![GitHub](https://img.shields.io/github/license/your-username/your-repository)
-![GitHub last commit](https://img.shields.io/github/last-commit/your-username/your-repository)
-![GitHub issues](https://img.shields.io/github/issues/your-username/your-repository)
+The `FileUploader` component is a Vue component that provides a user-friendly file upload interface, allowing users to either drag and drop files or browse for files to upload. It also includes a progress bar to track the upload progress.
 
-A Vue 3 component that provides a user-friendly file upload feature with real-time progress tracking using the integrated progress bar.
+## Usage
 
-## Installation
+To use the `FileUploader` component, you can import it and include it in your Vue application. Here's an example of how to use it:
 
-To use this File Uploader component in your Vue 3 project, follow these steps:
-
-1. **Install the component:**
-
-   You can install the Vue 3 File Uploader component via npm:
-
-    ```bash
-   npm install vue3-file-uploader
-
-1. **Usage :**
-```bash
-   <template>
+```vue
+<template>
   <div>
-    <FileUploader @file-uploaded="handleFileUpload" />
+    <file-uploader :url="uploadUrl" @file-uploaded="handleFileUploaded" />
   </div>
 </template>
 
 <script>
-import FileUploader from 'vue3-file-uploader';
+import FileUploader from "@/components/FileUploader.vue";
 
 export default {
   components: {
     FileUploader,
   },
+  data() {
+    return {
+      uploadUrl: "/your-upload-endpoint",
+    };
+  },
   methods: {
-    handleFileUpload(fileData) {
-      // Handle the uploaded file data
-      console.log('File uploaded:', fileData);
+    handleFileUploaded(fileInfo) {
+      // Handle the uploaded file information
+      console.log("File uploaded:", fileInfo);
     },
   },
 };
 </script>
-
