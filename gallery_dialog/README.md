@@ -38,3 +38,24 @@ export default {
   },
 };
 </script>
+```
+
+**Laravel Backend Functions**:
+
+Here are the three Laravel backend functions that can be used with the Gallery component.
+```php
+public function getUpload(Request $request)
+{
+    $user = auth()->user(); // Get the authenticated user
+    $images = UserUpload::where('user_id', $user->id)->get();
+
+    return $images->map(function ($image) {
+        return [
+            'id' => $image->id,
+            'name' => $image->file_name,
+            'url' => asset($image->file_path), // Assumes a public storage setup
+            'type' => $image->file_type,
+        ];
+    });
+}
+```

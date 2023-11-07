@@ -41,7 +41,11 @@ The Presenter component is perfect for presenting content or images with a smoot
 
 Clone the repository into your project's JavaScript folder and use the components directly in your project.
 
-### `Loader` Vue Component
+### Loader
+
+The Loader component provides a visually appealing loading indicator to keep your users engaged while data is being fetched or processed.
+
+**GitHub Repository**: [View on GitHub](https://github.com/uyibis/opencomponent/tree/master/loader)
 
 | Property     | Type     | Description                                          |
 | ------------ | -------- | ---------------------------------------------------- |
@@ -50,6 +54,7 @@ Clone the repository into your project's JavaScript folder and use the component
 **Emitted Events:**
 
 None
+
 
 ### `presenter_table_content` Vue Component
 
@@ -71,7 +76,11 @@ None
 
 None
 
-### `FileUploader` Vue Component
+### File Uploader
+
+The File Uploader component simplifies the process of uploading files and supports various file types and configurations.
+
+**GitHub Repository**: [View on GitHub](https://github.com/uyibis/opencomponent/tree/master/file_upload)
 
 | Property     | Type     | Description                                          |
 | ------------ | -------- | ---------------------------------------------------- |
@@ -81,17 +90,22 @@ None
 
 - `file-uploaded`: Emitted when a file is successfully uploaded.
 
-### `Gallery` Vue Component
+### Gallery Dialog
+
+The Gallery Dialog component is a media manager that allows users to select and manage images and videos from their previously uploaded media files.
+
+**GitHub Repository**: [View on GitHub](https://github.com/uyibis/opencomponent/tree/master/gallery_dialog)
 
 | Property     | Type     | Description                                          |
 | ------------ | -------- | ---------------------------------------------------- |
 | `uploader_url` | String | The URL for uploading files.                       |
 | `gallery_url`  | String | The URL for fetching gallery images.                |
-| `event_channel` | String | The event name for emitting selected images.        |
+| `event_chanel` | String | The event name for emitting selected images.        |
 
 **Emitted Events:**
 
 - `gallery-selected`: Emitted when selected images are applied.
+
 
 ## License
 
