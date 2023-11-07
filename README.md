@@ -27,7 +27,8 @@ The File Uploader component simplifies the process of uploading files and suppor
 
 ### Gallery
 
-The Gallery component is a media manager that consume the file uploader component. Its allow user to re-use their previous uploaded media file
+The Gallery component is a media manager that consumes the File Uploader component. It allows users to reuse their previously uploaded media files.
+
 ### Progress Bar
 
 The Progress Bar component is a visual indicator for tasks or processes with progress updates, providing a better user experience.
@@ -38,8 +39,7 @@ The Presenter component is perfect for presenting content or images with a smoot
 
 ## Installation
 
-clone repo into your js folder of your project and use the component directly in your project
-
+Clone the repository into your project's JavaScript folder and use the components directly in your project.
 
 ### `Loader` Vue Component
 
@@ -87,13 +87,17 @@ None
 | ------------ | -------- | ---------------------------------------------------- |
 | `uploader_url` | String | The URL for uploading files.                       |
 | `gallery_url`  | String | The URL for fetching gallery images.                |
-| `event_chanel` | String | The event name for emitting selected images.        |
+| `event_channel` | String | The event name for emitting selected images.        |
 
 **Emitted Events:**
 
-[//]: # (- `file-uploaded`: Emitted when a file is successfully uploaded.)
 - `gallery-selected`: Emitted when selected images are applied.
+
+## License
 
 This project is licensed under the terms of the MIT License.
 
 ### MIT License
+
+[MIT License Text]
+
