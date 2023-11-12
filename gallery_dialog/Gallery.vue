@@ -1,5 +1,10 @@
 <template>
-    <button @click="openModal(0)" class="btn btn-outline-primary"><i class="fa fa-plus"/>&nbsp;Illustration</button>
+    <div>
+     <div class="card">
+        <div class="card-body">
+            <button @click="openModal(0)" class="btn btn-outline-primary"><i class="fa fa-plus"/>&nbsp;Media</button>
+        </div>
+    </div>
         <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -10,8 +15,7 @@
                         &nbsp; &nbsp;
                         <button @click="emitSelectedImages" class="btn btn-link text-danger">
                             <i class="fa fa-check"/>
-                            Apply
-                        </button>
+                            Apply</button>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -25,7 +29,6 @@
                                 @click="toggleImageSelection(index)"
                                 :class="{ selected: image.selected }"
                             >
-
                                 <img v-if="isImageFileType(image)" class="img-thumbnail" :src="image.url" :alt="image.name" />
                                 <div v-else >
                                     <video class="video-thumbnail" :src="image.url" controls></video>
@@ -40,7 +43,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
 </template>
 
 <script>
@@ -48,7 +51,7 @@ import FileUploader from "../file_upload/FileUploader.vue";
 import Loader from "../loader/Loader.vue";
 export default {
     name: "Gallery",
-    props:['uploader_url','gallery_url','event_chanel']
+    props:['uploader_url','gallery_url']
     ,
     components: {
         FileUploader,
@@ -105,8 +108,9 @@ export default {
             console.log('hello');
             const selectedImages = this.images.filter((image) => image.selected);
             console.log(selectedImages);
-            this.$emit(this.event_chanel, selectedImages);
+            this.$emit("selected_images", selectedImages);
             this.closeModal()
+
         },
         removeSelectedImages() {
             // Remove selected images from the gallery
@@ -120,8 +124,7 @@ export default {
         }
     },
     mounted() {
-        this.fetchImagesFromBackend();
-        console.log("instance", )
+        this.fetchImagesFromBackend()
     }
 }
 </script>
